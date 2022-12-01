@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SendgridModule } from './app/sendgrid/sendgrid.module';
+import { MailModule } from './app/mail/mail.module';
 
 @Module({
   imports: [
@@ -13,10 +14,11 @@ import { SendgridModule } from './app/sendgrid/sendgrid.module';
       database: process.env.DB_DATABASE,
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
-      syncronize: true,
+      synchronize: true,
       entities: [__dirname + '/**/*.entity{.js,.ts}'],
     }),
     SendgridModule,
+    MailModule,
   ],
   controllers: [],
   providers: [],

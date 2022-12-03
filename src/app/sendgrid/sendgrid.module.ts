@@ -7,5 +7,6 @@ import { SendgridController } from './sendgrid.controller';
   imports: [HttpModule],
   providers: [SendgridService],
   controllers: [SendgridController],
+  exports: [SendgridService],
 })
 export class SendgridModule {}
